@@ -8,7 +8,33 @@
 </head>
 <body>
     <script>
-        console.log("Hello World");
+        /* variables for rps game */
+        let playerScore = 0;
+        let compScore = 0;
+        let randomNum = 0;
+        let input = "";
+        let playerGuess = "";
+        let compGuess = "";
+
+        /* function to randomize computer choice */
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+        
+        /* function to get computer selection */ 
+        function computerPlay() {
+            if (getRandomInt(3) === 0) {
+                return compGuess = "Rock";
+            } else if (getRandomInt(3) === 1) {
+                return compGuess = "Paper";
+            } else {
+                return compGuess = "Scissors";
+            }
+        };
+
+        
+
+
     </script>
 </body>
 </html>
