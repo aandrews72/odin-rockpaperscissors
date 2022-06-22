@@ -13,8 +13,6 @@
         let compScore = 0;
         let randomNum = 0;
         let input = "";
-        let playerGuess = "";
-        let compGuess = "";
 
         /* function to randomize computer choice */
         function getRandomInt(max) {
@@ -24,16 +22,43 @@
         /* function to get computer selection */ 
         function computerPlay() {
             if (getRandomInt(3) === 0) {
-                return compGuess = "Rock";
+                return compGuess = "rock";
             } else if (getRandomInt(3) === 1) {
-                return compGuess = "Paper";
+                return compGuess = "paper";
             } else {
-                return compGuess = "Scissors";
+                return compGuess = "scissors";
             }
         };
 
+
+        /* function to assess the match, and return a string */
+        function playRound(playerGuess, computerGuess) {
+            if (playerGuess === "rock" && compGuess === "rock") {
+                return ("It\'s a tie!");
+            } else if (playerGuess === "paper" && compGuess === "paper") {
+                return ("It\'s a tie!");
+            } else if (playerGuess === "scissors" && compGuess === "scissors") {
+                return ("It\'s a tie!");
+            } else if (playerGuess === "rock" && compGuess === "scissors") {
+                return ("You win! Rock beats scissors.");
+            } else if (playerGuess === "paper" && compGuess === "rock") {
+                return ("You win! Paper beats rock.");
+            } else if (playerGuess === "scissors" && compGuess === "paper") {
+                return ("You win! Scissors beat paper.");
+            } else if (playerGuess === "rock" && compGuess === "paper") {
+                return ("You lose! Paper beats rock.");
+            } else if (playerGuess === "paper" && compGuess === "scissors") {
+                return ("You lose! Scissors beat paper.");
+            } else if (playerGuess === "scissors" && compGuess === "rock") {
+                return ("You lose! Rock beats scissors.");
+            }
+            };
+
         
 
+        let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
+        console.log(computerPlay());
+        console.log(playRound(playerGuess, compGuess));
 
     </script>
 </body>
