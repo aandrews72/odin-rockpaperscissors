@@ -34,29 +34,29 @@
         /* function to assess the match, and return a string */
         function playRound(playerGuess, computerGuess) {
             if (playerGuess === "rock" && compGuess === "rock") {
-                return ("It\'s a tie!");
+                console.log("It\'s a tie!");
             } else if (playerGuess === "paper" && compGuess === "paper") {
-                return ("It\'s a tie!");
+                console.log("It\'s a tie!");
             } else if (playerGuess === "scissors" && compGuess === "scissors") {
-                return ("It\'s a tie!");
+                console.log("It\'s a tie!");
             } else if (playerGuess === "rock" && compGuess === "scissors") {
-                return ("You win! Rock beats scissors.");
                 return playerScore++;
+                console.log("You win! Rock beats scissors.");
             } else if (playerGuess === "paper" && compGuess === "rock") {
-                return ("You win! Paper beats rock.");
                 return playerScore++;
+                console.log("You win! Paper beats rock.");
             } else if (playerGuess === "scissors" && compGuess === "paper") {
-                return ("You win! Scissors beat paper.");
                 return playerScore++;
+                console.log("You win! Scissors beat paper.");
             } else if (playerGuess === "rock" && compGuess === "paper") {
-                return ("You lose! Paper beats rock.");
-                return compScore ++;
-            } else if (playerGuess === "paper" && compGuess === "scissors") {
-                return ("You lose! Scissors beat paper.");
-                return compScore ++;
-            } else if (playerGuess === "scissors" && compGuess === "rock") {
-                return ("You lose! Rock beats scissors.");
                 return compScore++;
+                console.log("You lose! Paper beats rock.");
+            } else if (playerGuess === "paper" && compGuess === "scissors") {
+                return compScore++;
+                console.log("You lose! Scissors beat paper.");
+            } else if (playerGuess === "scissors" && compGuess === "rock") {
+                return compScore++;
+                console.log("You lose! Rock beats scissors.");
             }
         };
 
@@ -64,7 +64,8 @@
         let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
         const computerGuess = computerPlay();
         console.log(computerPlay());
-        console.log(playRound(playerGuess, compGuess));
+        console.log(playRound(playerGuess, computerGuess));
+        console.log(playerScore, compScore);
 
 
         /* function game() {
