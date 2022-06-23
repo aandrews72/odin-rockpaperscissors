@@ -30,6 +30,7 @@
             }
         };
 
+        let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
 
         /* function to assess the match, and return a string */
         function playRound(playerGuess, computerGuess) {
@@ -49,30 +50,32 @@
                 return playerScore++;
                 console.log("You win! Scissors beat paper.");
             } else if (playerGuess === "rock" && compGuess === "paper") {
-                return compScore++;
                 console.log("You lose! Paper beats rock.");
+                return compScore++;
             } else if (playerGuess === "paper" && compGuess === "scissors") {
-                return compScore++;
                 console.log("You lose! Scissors beat paper.");
-            } else if (playerGuess === "scissors" && compGuess === "rock") {
                 return compScore++;
+            } else if (playerGuess === "scissors" && compGuess === "rock") {
                 console.log("You lose! Rock beats scissors.");
+                return compScore++;
             }
+            alert("Your score is: " + playerScore);
+            alert("The machine's score is: " + compScore);
         };
 
-        
-        let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
         const computerGuess = computerPlay();
         console.log(computerPlay());
-        console.log(playRound(playerGuess, computerGuess));
+        playRound(playerGuess, computerGuess);
         console.log(playerScore, compScore);
 
 
-        /* function game() {
-            for (let i = 0; i < 5; i++); {
-                playRound(); 
+        function game() {
+            for (let i = 1; i < 5; i++) {
+                console.log(i);
+               } playRound(playerGuess, computerGuess); 
             };
-        } */
+
+        game();
 
     </script>
 </body>
