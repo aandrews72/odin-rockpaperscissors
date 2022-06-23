@@ -41,24 +41,37 @@
                 return ("It\'s a tie!");
             } else if (playerGuess === "rock" && compGuess === "scissors") {
                 return ("You win! Rock beats scissors.");
+                return playerScore++;
             } else if (playerGuess === "paper" && compGuess === "rock") {
                 return ("You win! Paper beats rock.");
+                return playerScore++;
             } else if (playerGuess === "scissors" && compGuess === "paper") {
                 return ("You win! Scissors beat paper.");
+                return playerScore++;
             } else if (playerGuess === "rock" && compGuess === "paper") {
                 return ("You lose! Paper beats rock.");
+                return compScore ++;
             } else if (playerGuess === "paper" && compGuess === "scissors") {
                 return ("You lose! Scissors beat paper.");
+                return compScore ++;
             } else if (playerGuess === "scissors" && compGuess === "rock") {
                 return ("You lose! Rock beats scissors.");
+                return compScore++;
             }
-            };
+        };
 
         
-
         let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
+        const computerGuess = computerPlay();
         console.log(computerPlay());
         console.log(playRound(playerGuess, compGuess));
+
+
+        /* function game() {
+            for (let i = 0; i < 5; i++); {
+                playRound(); 
+            };
+        } */
 
     </script>
 </body>
