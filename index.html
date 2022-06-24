@@ -59,8 +59,12 @@
             }
         };
 
-
-        let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
+        function guess() {
+            prompt("Rock, paper, or scissors?").toLowerCase();
+        }
+        
+        const playerGuess = guess();
+        /*let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase(); */
         const computerGuess = computerPlay();
        /* console.log(computerPlay());
         playRound(playerGuess, compGuess);
@@ -71,7 +75,8 @@
 
         function game() {
             for (let i = 0; i < 5; i++) {
-                 console.log(computerPlay());
+                console.log(computerPlay());
+                guess();
                 playRound(playerGuess, compGuess);
                 console.log("You have: " + (playerScore));
                 console.log("The machine has: " + (compScore));
