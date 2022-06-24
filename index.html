@@ -8,12 +8,11 @@
 </head>
 <body>
     <script>
-        /* variables for rps game */
+        
         let playerScore = 0;
         let compScore = 0;
         let randomNum = 0;
         let input = "";
-
         /* function to randomize computer choice */
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
@@ -29,55 +28,55 @@
                 return compGuess = "scissors";
             }
         };
-
-        /* function to get user's guess */
-        function userPrompt() {
-            prompt("Rock, paper, or scissors?").toLowerCase();
-        }
-
         /* function to assess the match, and return a string */
-        function playRound(userGuess, computerGuess) {
-             if (playerGuess === "rock" && compGuess === "rock") {
+        function playRound(playerGuess, computerGuess) {
+            if (playerGuess === "rock" && compGuess === "rock") {
                 console.log("It\'s a tie!");
             } else if (playerGuess === "paper" && compGuess === "paper") {
                 console.log("It\'s a tie!");
             } else if (playerGuess === "scissors" && compGuess === "scissors") {
                 console.log("It\'s a tie!");
             } else if (playerGuess === "rock" && compGuess === "scissors") {
-                return playerScore++;
                 console.log("You win! Rock beats scissors.");
+                return playerScore++;
             } else if (playerGuess === "paper" && compGuess === "rock") {
-                return playerScore++;
                 console.log("You win! Paper beats rock.");
-            } else if (playerGuess === "scissors" && compGuess === "paper") {
                 return playerScore++;
+            } else if (playerGuess === "scissors" && compGuess === "paper") {
                 console.log("You win! Scissors beat paper.");
+                return playerScore++;
             } else if (playerGuess === "rock" && compGuess === "paper") {
                 console.log("You lose! Paper beats rock.");
                 return compScore++;
+                console.log("You lose! Paper beats rock.");
             } else if (playerGuess === "paper" && compGuess === "scissors") {
                 console.log("You lose! Scissors beat paper.");
                 return compScore++;
+                console.log("You lose! Scissors beat paper.");
             } else if (playerGuess === "scissors" && compGuess === "rock") {
                 console.log("You lose! Rock beats scissors.");
                 return compScore++;
             }
         };
 
-        const playerGuess = userPrompt();
-        const computerGuess = computerPlay();
-        console.log("Your opponent chose " + computerPlay());
-        playRound(playerGuess, computerGuess);
 
+        let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
+        const computerGuess = computerPlay();
+       /* console.log(computerPlay());
+        playRound(playerGuess, compGuess);
+        console.log("You have: " + (playerScore));
+        console.log("The machine has: " + (compScore)); */
+
+        
 
         function game() {
-            for (let i = 1; i < 5; i++) {
-                console.log(playerScore, compScore);
-                userPrompt();
-                playRound(playerGuess, computerGuess); 
-            } alert("Your score is: " + playerScore);
-            alert("The machine's score is: " + compScore);
+            for (let i = 0; i < 5; i++) {
+                 console.log(computerPlay());
+                playRound(playerGuess, compGuess);
+                console.log("You have: " + (playerScore));
+                console.log("The machine has: " + (compScore));
             };
+        };
 
         game();
             /* need to be assess 5 prompts and create 5 generations for computerGuess */ 
