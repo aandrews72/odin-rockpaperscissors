@@ -30,11 +30,14 @@
             }
         };
 
-        let playerGuess = prompt("Rock, paper, or scissors?").toLowerCase();
+        /* function to get user's guess */
+        function userPrompt() {
+            prompt("Rock, paper, or scissors?").toLowerCase();
+        }
 
         /* function to assess the match, and return a string */
-        function playRound(playerGuess, computerGuess) {
-            if (playerGuess === "rock" && compGuess === "rock") {
+        function playRound(userGuess, computerGuess) {
+             if (playerGuess === "rock" && compGuess === "rock") {
                 console.log("It\'s a tie!");
             } else if (playerGuess === "paper" && compGuess === "paper") {
                 console.log("It\'s a tie!");
@@ -59,24 +62,25 @@
                 console.log("You lose! Rock beats scissors.");
                 return compScore++;
             }
-            alert("Your score is: " + playerScore);
-            alert("The machine's score is: " + compScore);
         };
 
+        const playerGuess = userPrompt();
         const computerGuess = computerPlay();
-        console.log(computerPlay());
+        console.log("Your opponent chose " + computerPlay());
         playRound(playerGuess, computerGuess);
-        console.log(playerScore, compScore);
 
 
         function game() {
             for (let i = 1; i < 5; i++) {
-                console.log(i);
-               } playRound(playerGuess, computerGuess); 
+                console.log(playerScore, compScore);
+                userPrompt();
+                playRound(playerGuess, computerGuess); 
+            } alert("Your score is: " + playerScore);
+            alert("The machine's score is: " + compScore);
             };
 
         game();
-
+            /* need to be assess 5 prompts and create 5 generations for computerGuess */ 
     </script>
 </body>
 </html>
