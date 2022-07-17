@@ -17,12 +17,12 @@ function computerPlay() {
     }
 };
 
-function guess() {
+/* CHANGE THIS TO RECEIVE EVENT LISTENER function guess() {
     return prompt("Rock, paper, or scissors?").toLowerCase();
 };
         
 const playerGuess = guess();
-
+*/
 
 /* function to assess the match, and return a string */
 function playRound(playerGuess, computerGuess) {
@@ -54,7 +54,7 @@ function playRound(playerGuess, computerGuess) {
 };
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    for /*(let i = 0; i < 5; i++)*/ {
         console.log(computerPlay());
         guess();
         playRound(playerGuess, computerGuess);
