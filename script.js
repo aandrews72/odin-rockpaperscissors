@@ -1,6 +1,14 @@
 let playerScore = 0;
 let compScore = 0;
 
+const Rock = document.querySelector('.Rock');
+Rock.addEventListener('click', ()=>{
+    playerGuess = "rock";
+    console.log(playerGuess);
+    playRound();
+}
+);
+
 /* function to randomize computer choice */
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -17,12 +25,12 @@ function computerPlay() {
     }
 };
 
-/* CHANGE THIS TO RECEIVE EVENT LISTENER function guess() {
+function guess() /*{
     return prompt("Rock, paper, or scissors?").toLowerCase();
-};
-        
+};*/
+
 const playerGuess = guess();
-*/
+
 
 /* function to assess the match, and return a string */
 function playRound(playerGuess, computerGuess) {
@@ -54,13 +62,38 @@ function playRound(playerGuess, computerGuess) {
 };
 
 function game() {
-    for /*(let i = 0; i < 5; i++)*/ {
+    for /*(let i = 0; i < 5; i++)*/ (
         console.log(computerPlay());
         guess();
-        playRound(playerGuess, computerGuess);
-        console.log("You have: " + (playerScore));
-        console.log("The machine has: " + (compScore));
-    };
+        playRound(playerGuess, computerGuess)
+        /*console.log("You have: " + (playerScore));
+        console.log("The machine has: " + (compScore));*/
+    );
 };
 
 game();
+
+
+const rock = document.querySelector('.Rock');
+rock.addEventListener('click', ()=>{
+    playerGuess === "rock";
+    console.log(playerGuess);
+    playRound();
+}
+);
+
+const Paper = document.querySelector('.Paper');
+Paper.addEventListener('click', ()=>{
+    playerGuess === "paper";
+    console.log(playerGuess);
+    playRound();
+}
+);
+
+const Scissors = document.querySelector('.Scissors');
+Scissors.addEventListener('click', ()=>{
+    playerGuess === "scissors";
+    console.log(playerGuess);
+    playRound();
+}
+)
